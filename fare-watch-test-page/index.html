@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <script type="text/javascript">
+    function loadWatchFaresScript() {
+      var partnerId = 'qantas';
+      var scriptUrl = 'http://jumpseat-cdn.volantio.com/static/v3/javascripts/custom/qantas/jumpseat.js';
+
+      (function(d, s, id) {
+        window.Jumpseat = {
+          partner_id: partnerId,
+          debug: false,
+          queue: [],
+          run: function(m, p) { this.queue.push({ method: m, params: p }); }
+        };
+
+        var js = d.getElementsByTagName(s)[0];
+
+        if (d.getElementById(id)) {
+          return;
+        }
+
+        js = d.createElement(s);
+        js.id = id;
+        js.src = scriptUrl;
+        js.onload = function() { console.log('JS loaded.'); };
+
+        document.getElementsByTagName('head')[0].appendChild(js);
+
+      }(document, 'script', 'jumpseat-js'));
+      console.log('Script added.');
+    }
+
+
+    function initWatchPrice() {
+      console.log('calling initWatchPrice');
+      console.log('Jumpseat is ', Jumpseat);
+      console.log('fare watch button is ', document.getElementById('fare-watch__button'));
+      Jumpseat.run('initWatchPrice', {
+        content_selector: '',
+        button_selector: '#fare-watch__button',
+        culture_code: 'en-AU',
+        origin_code: 'SYD',
+        destination_code: 'MEL',
+        cabin: 'economy'
+      });
+      console.log('called initWatchPrice');
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log('DOMContentLoaded');
+      loadWatchFaresScript();
+      initWatchPrice();
+    });
+  </script>
+</head>
+<body>
+  <button id="fare-watch__button">Watch Fares</button>
+</body>
+</html>
