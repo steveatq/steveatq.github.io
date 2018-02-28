@@ -1,0 +1,106 @@
+body {
+  /*background-color: grey;*/
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+
+.container {
+  display: inline-block;
+/*  border: 1px solid grey;
+*/    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 2px solid #dadada;
+    border-radius: 0;
+    box-sizing: border-box;
+    color: #323232;
+    font-size: 18px;
+    height: 48px;
+    line-height: 25.5px;
+    background: white;
+
+
+}
+
+input {
+  border: 2px solid grey;
+  border: none;
+  width: 50px;
+  padding: 10.5px 0 11px 14px;
+  background: transparent;
+}
+
+input:focus {
+  outline: 0;
+}
+
+.container.focused {
+  outline: 0;
+  border-color: #8de2e0;
+  box-shadow: 0 0 0 1px #8de2e0 inset;
+}
+
+/*input:nth-of-type(1) {
+  border-left: 2px solid grey;
+  border-top: 2px solid grey;
+  border-bottom: 2px solid grey;
+}
+
+/*input:focus {
+  border-color: #8de2e0;
+}
+*/
+/*input:nth-of-type(2) {
+  border-top: 2px solid grey;
+  border-bottom: 2px solid grey;
+}
+
+input:nth-of-type(3) {
+  border-right: 2px solid grey;
+  border-top: 2px solid grey;
+  border-bottom: 2px solid grey;
+}
+*/
+/*input:focus {
+  outline: 0;
+  border-color: #8de2e0;
+  box-shadow: 0 0 0 1px #8de2e0 inset;
+}*/
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.year {
+  width: 4rem;
+}
